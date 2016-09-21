@@ -1,0 +1,16 @@
+<script src="bower_components/tester/tester.js"></script>
+<script src="../fceptor.js"></script>
+<script>
+FCeptor.get(/^/, function(ctx) {
+  ctx.request = new Request('data.json');
+});
+
+fetch('hehe').then(response => {
+  Tester.assert(response.status === 200);
+  Tester.log(status);
+  return response.json();
+}).then(function(result) {
+  Tester.assert(result.name === 'hehe');
+  Tester.feedback(true);
+});
+</script>

@@ -1,0 +1,19 @@
+<script src="bower_components/tester/tester.js"></script>
+<script src="../fceptor.js"></script>
+<script>
+let status = +location.search.match(/[?&]status=([^&]*)|$/)[1];
+
+FCeptor.get(/api1/, function(ctx) {
+  ctx.response = new Response('hehe', { status: status });
+  return false;
+});
+
+fetch('api1').then(response => {
+  Tester.assert(response.status === status);
+  Tester.log(status);
+  return response.text();
+}).then(function(text) {
+  Tester.assert(text === 'hehe');
+  Tester.feedback(true);
+});
+</script>

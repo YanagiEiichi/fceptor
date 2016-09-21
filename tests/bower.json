@@ -1,0 +1,15 @@
+{
+  "name": "tests",
+  "version": "N/A",
+  "authors": [
+    "YanagiEiichi <admin@web-tinker.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*"
+  ],
+  "dependencies": {
+    "tester": "~0.0.12",
+    "requirejs": "~2.1.20"
+  }
+}

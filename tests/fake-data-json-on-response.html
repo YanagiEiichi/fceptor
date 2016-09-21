@@ -1,0 +1,21 @@
+<script src="bower_components/tester/tester.js"></script>
+<script src="../fceptor.js"></script>
+<script>
+FCeptor.get(/data\.json/, null, function(ctx) {
+  Tester.assert(ctx.response.status === 200);
+  return ctx.response.json().then(function(result) {
+    Tester.assert(result.name === 'hehe');
+    Tester.log(result.name);
+    ctx.response = new Response(new Blob([ '{"name":"haha"}' ], { type: 'application/json' }));
+  });
+});
+
+fetch('data.json').then(response => {
+  Tester.assert(response.status === 200);
+  Tester.log(status);
+  return response.json();
+}).then(function(result) {
+  Tester.assert(result.name === 'haha');
+  Tester.feedback(true);
+});
+</script>

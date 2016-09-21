@@ -1,0 +1,9 @@
+<script src="bower_components/tester/tester.js"></script>
+<script src="bower_components/requirejs/require.js"></script>
+<script>
+require.config({ paths: { FCeptor: '../fceptor' } });
+require(['FCeptor'], function(FCeptor) {
+console.log(FCeptor, fetch.FCeptor);
+  Tester.feedback(FCeptor === fetch.FCeptor);
+});
+</script>
