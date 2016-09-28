@@ -1,6 +1,6 @@
 ## FCeptor
 
-A fetch interceptor
+An interceptor of [Fetch API](https://fetch.spec.whatwg.org/).
 
 ## Install
 
@@ -24,11 +24,11 @@ FCeptor.when(method, route, requestHandler, responseHandler);
 In addition, some shortcut methods are provided:
 
 ```javascript
-FCeptor.get(route, requestHandler, responseHandler);
-FCeptor.post(route, requestHandler, responseHandler);
-FCeptor.put(route, requestHandler, responseHandler);
-FCeptor.delete(route, requestHandler, responseHandler);
-FCeptor.patch(route, requestHandler, responseHandler);
+FCeptor.get(...args);
+FCeptor.post(...args);
+FCeptor.put(...args);
+FCeptor.delete(...args);
+FCeptor.patch(...args);
 ```
 
 ## Schematic Diagram
@@ -37,7 +37,7 @@ FCeptor.patch(route, requestHandler, responseHandler);
 
 ## Demo
 
-### 1. Fake a resource
+### 1. Mock a resource
 
 ```html
 <script src="/node_modules/fceptor/fceptor.js"></script>

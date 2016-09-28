@@ -1,7 +1,7 @@
 {
   "name": "fceptor",
   "version": "0.2.8",
-  "description": "A `fetch` Interceptor",
+  "description": "AN INTERCEPTOR OF FETCH API",
   "main": "fceptor.js",
   "directories": {
     "test": "tests"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/YanagiEiichi/fceptor.git"
   },
-  "author": "YanagiEiichi",
+  "author": "admin@web-tinker.com",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/YanagiEiichi/fceptor/issues"
@@ -30,7 +30,8 @@
     "languages": [ "xml", "markdown", "bash" ],
     "home": "/fceptor/",
     "items": [
-      { "text": "Intro", "href": "/fceptor/docs/intro/" }
+      { "text": "Introduction", "href": "/fceptor/docs/intro/" },
+      { "text": "Github", "href": "//github.com/YanagiEiichi/fceptor/", "target": "_blank" }
     ]
   }
 }
