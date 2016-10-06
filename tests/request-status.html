@@ -1,7 +1,7 @@
-<script src="bower_components/tester/tester.js"></script>
-<script src="../fceptor.js"></script>
+<script src="/tester.js"></script>
+<script src="/fceptor.js"></script>
 <script>
-let status = +location.search.match(/[?&]status=([^&]*)|$/)[1];
+let status = 401;
 
 FCeptor.get(/api1/, function(ctx) {
   ctx.response = new Response('hehe', { status: status });
@@ -9,7 +9,7 @@ FCeptor.get(/api1/, function(ctx) {
 });
 
 fetch('api1').then(response => {
-  Tester.assert(response.status === status);
+  Tester.assert(response.status === status, `${status} != ${response.status}`);
   Tester.log(status);
   return response.text();
 }).then(function(text) {
