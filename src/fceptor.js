@@ -63,13 +63,19 @@ fetch = function(input, init) {
   return requestHandlers.solve(ctx).then(function() {
     return originalFetch(ctx.request).then(function(response) {
       ctx.response = response;
+    }, function(error) {
+      ctx.error = error;
     });
   }, function() {
     if (!ctx.response) ctx.response = new Response();
   }).then(function() {
     return responseHandlers.solve(ctx);
   }).then(function() {
-    return ctx.response;
+    if (ctx.response) {
+      return ctx.response;
+    } else {
+      throw ctx.error;
+    }
   }, function() {
     return new Promise(function() {}); // Ignore
   });
