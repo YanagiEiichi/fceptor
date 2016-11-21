@@ -8,6 +8,8 @@ addEventListener('error', () => {
 <script src="/fceptor.js"></script>
 <script>
 setTimeout(() => {
-  Tester.feedback(FCeptor);
+  Tester.assert(fetch === null);
+  Tester.assert(FCeptor);
+  Tester.feedback(true);
 });
 </script>

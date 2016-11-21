@@ -59,7 +59,7 @@ var responseHandlers = new Handlers();
 // Save original XMLHttpRequest class
 var originalFetch = fetch;
 
-fetch = window.fetch = function(input, init) {
+fetch = function(input, init) {
   var request = new Request(input, init);
   var ctx = { request: request, response: null };
   return requestHandlers.solve(ctx).then(function() {
@@ -82,6 +82,8 @@ fetch = window.fetch = function(input, init) {
     return new Promise(function() {}); // Ignore
   });
 };
+
+if (window.fetch) window.fetch = fetch;
 
 var FCeptor = new function() {
   var that = this;
