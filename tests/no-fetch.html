@@ -1,0 +1,13 @@
+<script src="/tester.js"></script>
+<script>
+Object.defineProperty(window, 'fetch', { configurable: true, value: null });
+addEventListener('error', () => {
+  Tester.feedback(false);
+});
+</script>
+<script src="/fceptor.js"></script>
+<script>
+setTimeout(() => {
+  Tester.feedback(FCeptor);
+});
+</script>

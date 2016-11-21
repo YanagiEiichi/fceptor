@@ -2,6 +2,8 @@
 
 'use strict';
 
+var fetch = window.fetch || function() {};
+
 // Avoid duplicate runing
 if(fetch.FCeptor) return fetch.FCeptor;
 
@@ -57,7 +59,7 @@ var responseHandlers = new Handlers();
 // Save original XMLHttpRequest class
 var originalFetch = fetch;
 
-fetch = function(input, init) {
+fetch = window.fetch = function(input, init) {
   var request = new Request(input, init);
   var ctx = { request: request, response: null };
   return requestHandlers.solve(ctx).then(function() {
